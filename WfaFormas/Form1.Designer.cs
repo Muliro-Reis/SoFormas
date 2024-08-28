@@ -67,7 +67,7 @@
             this.groupBox1.Size = new System.Drawing.Size(576, 243);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Formas Geográficas";
+            this.groupBox1.Text = "Formas Geométricas";
             // 
             // txtPerimetro
             // 
@@ -163,7 +163,7 @@
             // lblBase
             // 
             this.lblBase.AutoSize = true;
-            this.lblBase.Location = new System.Drawing.Point(23, 85);
+            this.lblBase.Location = new System.Drawing.Point(29, 85);
             this.lblBase.Name = "lblBase";
             this.lblBase.Size = new System.Drawing.Size(31, 13);
             this.lblBase.TabIndex = 2;
@@ -181,6 +181,8 @@
             this.cmbTriangulo.Size = new System.Drawing.Size(121, 21);
             this.cmbTriangulo.TabIndex = 1;
             this.cmbTriangulo.Visible = false;
+            this.cmbTriangulo.TextUpdate += new System.EventHandler(this.cmbTriangulo_TextUpdate);
+            this.cmbTriangulo.TextChanged += new System.EventHandler(this.cmbTriangulo_TextUpdate);
             // 
             // cmbForma
             // 

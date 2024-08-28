@@ -22,40 +22,55 @@ namespace WfaFormas
             switch (cmbForma.Text)
             {
                 case "Quadrado":
-                    SelecionarQuadrado();
+                    ExibirBase(true);
+                    ExibirAltura(false);
+                    ExibirRaio(false);
+                    cmbTriangulo.Visible = false;
                     break;
-                case "Triangulo":
-                    SelecionarTriangulo();
+                case "Triângulo":
+                    ExibirRaio(false);
+                    ExibirBase(true);
+                    cmbTriangulo.Visible = true;
+                    cmbTriangulo_TextUpdate(null, null);
                     break;
                 default:
                     break;
             }
         }
 
-        private void SelecionarQuadrado()
+        private void cmbTriangulo_TextUpdate(object sender, EventArgs e)
         {
-            ExibirBase(true);
-            ExibirAltura(false);
-            lblRaio.Visible = txtRaio.Visible = false;
-            cmbTriangulo.Visible = false;
+            txtBase.Enabled = true;
+            txtAltura.Enabled = true;
+            switch (cmbTriangulo.Text)
+            {
+                case "Equilátero":
+                    ExibirAltura(false);
+                    break;
+                case "Isósceles":
+                    ExibirAltura(true);
+                    break;
+                case "Reto":
+                    ExibirAltura(true);
+                    break;
+                default:
+                    txtBase.Enabled = false;
+                    txtAltura.Enabled = false;
+                    break;
+            }
         }
 
         private void ExibirBase(bool visivel)
         {
             lblBase.Visible = txtBase.Visible = visivel;
         }
-
-        private void SelecionarTriangulo()
-        {
-            ExibirBase(true);
-            ExibirAltura(true);
-            lblRaio.Visible = txtRaio.Visible = false;
-            cmbTriangulo.Visible = true;
-        }
-
         private void ExibirAltura(bool visivel)
         {
             lblAltura.Visible = txtAltura.Visible = visivel;
+        }
+        private void ExibirRaio(bool visivel)
+        {
+            lblRaio.Visible = txtRaio.Visible = visivel;
         }
 
         private void btnCriar_Click(object sender, EventArgs e)
@@ -68,6 +83,17 @@ namespace WfaFormas
                 };
                 cmbObjetos.Items.Add(quadrado);
             }
+            else if (cmbForma.Text.Equals("Triângulo"))
+            {
+                if (cmbTriangulo.Text.Equals("Equilátero"))
+                {
+                    FormaGeometrica triangulo = new TE()
+                    {
+                        Lado = Convert.ToDouble(txtBase.Text)
+                    };
+                    cmbObjetos.Items.Add(triangulo);
+                }
+            }
         }
 
         private void cmbObjetos_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,5 +102,7 @@ namespace WfaFormas
             txtArea.Text = obj.CalcularArea().ToString();
             txtPerimetro.Text = obj.CalcularPerimetro().ToString();
         }
+
+        
     }
 }
