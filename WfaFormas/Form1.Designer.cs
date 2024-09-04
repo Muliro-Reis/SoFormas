@@ -64,22 +64,23 @@
             this.groupBox1.Controls.Add(this.cmbForma);
             this.groupBox1.Location = new System.Drawing.Point(60, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(576, 243);
+            this.groupBox1.Size = new System.Drawing.Size(597, 334);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Formas Geométricas";
             // 
             // txtPerimetro
             // 
-            this.txtPerimetro.Location = new System.Drawing.Point(342, 152);
+            this.txtPerimetro.Location = new System.Drawing.Point(470, 240);
             this.txtPerimetro.Name = "txtPerimetro";
+            this.txtPerimetro.ReadOnly = true;
             this.txtPerimetro.Size = new System.Drawing.Size(100, 20);
             this.txtPerimetro.TabIndex = 13;
             // 
             // lblPerimetro
             // 
             this.lblPerimetro.AutoSize = true;
-            this.lblPerimetro.Location = new System.Drawing.Point(283, 155);
+            this.lblPerimetro.Location = new System.Drawing.Point(411, 243);
             this.lblPerimetro.Name = "lblPerimetro";
             this.lblPerimetro.Size = new System.Drawing.Size(53, 13);
             this.lblPerimetro.TabIndex = 12;
@@ -87,7 +88,7 @@
             // 
             // txtArea
             // 
-            this.txtArea.Location = new System.Drawing.Point(342, 101);
+            this.txtArea.Location = new System.Drawing.Point(470, 189);
             this.txtArea.Name = "txtArea";
             this.txtArea.ReadOnly = true;
             this.txtArea.Size = new System.Drawing.Size(100, 20);
@@ -96,48 +97,51 @@
             // lblArea
             // 
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(307, 104);
+            this.lblArea.Location = new System.Drawing.Point(435, 192);
             this.lblArea.Name = "lblArea";
             this.lblArea.Size = new System.Drawing.Size(29, 13);
             this.lblArea.TabIndex = 10;
-            this.lblArea.Text = "Area";
+            this.lblArea.Text = "Área";
             // 
             // cmbObjetos
             // 
             this.cmbObjetos.FormattingEnabled = true;
             this.cmbObjetos.Location = new System.Drawing.Point(408, 34);
             this.cmbObjetos.Name = "cmbObjetos";
-            this.cmbObjetos.Size = new System.Drawing.Size(121, 21);
+            this.cmbObjetos.Size = new System.Drawing.Size(162, 21);
             this.cmbObjetos.TabIndex = 9;
             this.cmbObjetos.SelectedIndexChanged += new System.EventHandler(this.cmbObjetos_SelectedIndexChanged);
             // 
             // btnCriar
             // 
-            this.btnCriar.Location = new System.Drawing.Point(307, 32);
+            this.btnCriar.Image = global::WfaFormas.Properties.Resources.icons8_adicionar_48;
+            this.btnCriar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCriar.Location = new System.Drawing.Point(187, 34);
             this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(75, 23);
+            this.btnCriar.Size = new System.Drawing.Size(75, 70);
             this.btnCriar.TabIndex = 8;
             this.btnCriar.Text = "Criar";
+            this.btnCriar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCriar.UseVisualStyleBackColor = true;
             this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
             // 
             // txtRaio
             // 
-            this.txtRaio.Location = new System.Drawing.Point(75, 185);
+            this.txtRaio.Location = new System.Drawing.Point(68, 281);
             this.txtRaio.Name = "txtRaio";
             this.txtRaio.Size = new System.Drawing.Size(100, 20);
             this.txtRaio.TabIndex = 7;
             // 
             // txtAltura
             // 
-            this.txtAltura.Location = new System.Drawing.Point(75, 133);
+            this.txtAltura.Location = new System.Drawing.Point(68, 235);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(100, 20);
             this.txtAltura.TabIndex = 6;
             // 
             // txtBase
             // 
-            this.txtBase.Location = new System.Drawing.Point(75, 82);
+            this.txtBase.Location = new System.Drawing.Point(68, 189);
             this.txtBase.Name = "txtBase";
             this.txtBase.Size = new System.Drawing.Size(100, 20);
             this.txtBase.TabIndex = 5;
@@ -145,7 +149,7 @@
             // lblRaio
             // 
             this.lblRaio.AutoSize = true;
-            this.lblRaio.Location = new System.Drawing.Point(29, 188);
+            this.lblRaio.Location = new System.Drawing.Point(22, 284);
             this.lblRaio.Name = "lblRaio";
             this.lblRaio.Size = new System.Drawing.Size(29, 13);
             this.lblRaio.TabIndex = 4;
@@ -154,7 +158,7 @@
             // lblAltura
             // 
             this.lblAltura.AutoSize = true;
-            this.lblAltura.Location = new System.Drawing.Point(26, 136);
+            this.lblAltura.Location = new System.Drawing.Point(19, 238);
             this.lblAltura.Name = "lblAltura";
             this.lblAltura.Size = new System.Drawing.Size(34, 13);
             this.lblAltura.TabIndex = 3;
@@ -163,7 +167,7 @@
             // lblBase
             // 
             this.lblBase.AutoSize = true;
-            this.lblBase.Location = new System.Drawing.Point(29, 85);
+            this.lblBase.Location = new System.Drawing.Point(22, 192);
             this.lblBase.Name = "lblBase";
             this.lblBase.Size = new System.Drawing.Size(31, 13);
             this.lblBase.TabIndex = 2;
@@ -176,9 +180,9 @@
             "Equilátero",
             "Isósceles",
             "Reto"});
-            this.cmbTriangulo.Location = new System.Drawing.Point(160, 34);
+            this.cmbTriangulo.Location = new System.Drawing.Point(23, 83);
             this.cmbTriangulo.Name = "cmbTriangulo";
-            this.cmbTriangulo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTriangulo.Size = new System.Drawing.Size(145, 21);
             this.cmbTriangulo.TabIndex = 1;
             this.cmbTriangulo.Visible = false;
             this.cmbTriangulo.TextUpdate += new System.EventHandler(this.cmbTriangulo_TextUpdate);
@@ -194,7 +198,7 @@
             "Triângulo"});
             this.cmbForma.Location = new System.Drawing.Point(23, 34);
             this.cmbForma.Name = "cmbForma";
-            this.cmbForma.Size = new System.Drawing.Size(131, 21);
+            this.cmbForma.Size = new System.Drawing.Size(145, 21);
             this.cmbForma.TabIndex = 0;
             this.cmbForma.SelectedIndexChanged += new System.EventHandler(this.cmbForma_SelectedIndexChanged);
             // 
@@ -202,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(738, 401);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";

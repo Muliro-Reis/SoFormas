@@ -13,5 +13,10 @@ namespace WfaFormas
         {
             return A + B + Math.Sqrt(A * A + B * B);
         }
+
+        public override string ToString()
+        {
+            return $"Triângulo Reto ({B};{A})";
+        }
     }
 }

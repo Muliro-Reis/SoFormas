@@ -13,5 +13,10 @@ namespace WfaFormas
         {
             return A + B + Math.Sqrt(A * A + B / 2 * B / 2);
         }
+
+        public override string ToString()
+        {
+            return $"Triângulo Isósceles ({B};{A})";
+        }
     }
 }

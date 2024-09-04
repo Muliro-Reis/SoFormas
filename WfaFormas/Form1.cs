@@ -75,24 +75,49 @@ namespace WfaFormas
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
-            if (cmbForma.Text.Equals("Quadrado"))
+            try
             {
-                FormaGeometrica quadrado = new Quadrado()
+                if (cmbForma.Text.Equals("Quadrado"))
                 {
-                    Lado = Convert.ToDouble(txtBase.Text)
-                };
-                cmbObjetos.Items.Add(quadrado);
-            }
-            else if (cmbForma.Text.Equals("Triângulo"))
-            {
-                if (cmbTriangulo.Text.Equals("Equilátero"))
-                {
-                    FormaGeometrica triangulo = new TE()
+                    FormaGeometrica quadrado = new Quadrado()
                     {
                         Lado = Convert.ToDouble(txtBase.Text)
                     };
-                    cmbObjetos.Items.Add(triangulo);
+                    cmbObjetos.Items.Add(quadrado);
                 }
+                else if (cmbForma.Text.Equals("Triângulo"))
+                {
+                    if (cmbTriangulo.Text.Equals("Equilátero"))
+                    {
+                        FormaGeometrica triangulo = new TE()
+                        {
+                            Lado = Convert.ToDouble(txtBase.Text)
+                        };
+                        cmbObjetos.Items.Add(triangulo);
+                    }
+                    else if (cmbTriangulo.Text.Equals("Isósceles"))
+                    {
+                        FormaGeometrica triangulo = new TI()
+                        {
+                            A = Convert.ToDouble(txtAltura.Text),
+                            B = Convert.ToDouble(txtBase.Text)
+                        };
+                        cmbObjetos.Items.Add(triangulo);
+                    }
+                    else if (cmbTriangulo.Text.Equals("Reto"))
+                    {
+                        FormaGeometrica triangulo = new TR()
+                        {
+                            A = Convert.ToDouble(txtAltura.Text),
+                            B = Convert.ToDouble(txtBase.Text)
+                        };
+                        cmbObjetos.Items.Add(triangulo);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -102,7 +127,5 @@ namespace WfaFormas
             txtArea.Text = obj.CalcularArea().ToString();
             txtPerimetro.Text = obj.CalcularPerimetro().ToString();
         }
-
-        
     }
 }
