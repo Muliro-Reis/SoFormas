@@ -22,17 +22,30 @@ namespace WfaFormas
             switch (cmbForma.Text)
             {
                 case "Quadrado":
+                    ExibirRaio(false);
                     ExibirBase(true);
                     ExibirAltura(false);
-                    ExibirRaio(false);
+
                     cmbTriangulo.Visible = false;
                     break;
+
                 case "Triângulo":
                     ExibirRaio(false);
                     ExibirBase(true);
+                    ExibirAltura(true);
+
                     cmbTriangulo.Visible = true;
                     cmbTriangulo_TextUpdate(null, null);
                     break;
+
+                case "Retângulo":
+                    ExibirRaio(false);
+                    ExibirBase(true);
+                    ExibirAltura(true);
+
+                    cmbTriangulo.Visible = false;
+                    break;
+
                 default:
                     break;
             }
@@ -113,6 +126,15 @@ namespace WfaFormas
                         };
                         cmbObjetos.Items.Add(triangulo);
                     }
+                }
+                else if (cmbForma.Text.Equals("Retângulo"))
+                {
+                    FormaGeometrica retangulo = new Retangulo()
+                    {
+                        A = Convert.ToDouble(txtAltura.Text),
+                        B = Convert.ToDouble(txtBase.Text)
+                    };
+                    cmbObjetos.Items.Add(retangulo);
                 }
             }
             catch (Exception ex)
