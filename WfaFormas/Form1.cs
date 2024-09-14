@@ -17,8 +17,22 @@ namespace WfaFormas
             InitializeComponent();
         }
 
+        private void LimparTexto()
+        {
+            foreach (Control item in grpFormas.Controls)
+            {
+                if (item is TextBox)
+                {
+                    item.Text = "";
+                }
+            }
+        }
+
         private void cmbForma_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtBase.Enabled = true;
+            txtAltura.Enabled = true;
+            txtRaio.Enabled = true;
             switch (cmbForma.Text)
             {
                 case "Quadrado":
@@ -55,6 +69,10 @@ namespace WfaFormas
                     break;
 
                 default:
+                    txtBase.Enabled = false;
+                    txtAltura.Enabled = false;
+                    txtRaio.Enabled = false;
+                    cmbTriangulo.Visible = false;
                     break;
             }
         }
@@ -152,6 +170,9 @@ namespace WfaFormas
                     };
                     cmbObjetos.Items.Add(circunferencia);
                 }
+
+                lblNotificacao.Visible = true;
+                LimparTexto();
             }
             catch (Exception ex)
             {
@@ -164,6 +185,16 @@ namespace WfaFormas
             FormaGeometrica obj = cmbObjetos.SelectedItem as FormaGeometrica;
             txtArea.Text = obj.CalcularArea().ToString();
             txtPerimetro.Text = obj.CalcularPerimetro().ToString();
+        }
+
+        private void cmbObjetos_DropDown(object sender, EventArgs e)
+        {
+            lblNotificacao.Visible = false;
+        }
+
+        private void cmbObjetos_TextUpdate(object sender, EventArgs e)
+        {
+            LimparTexto();
         }
     }
 }
