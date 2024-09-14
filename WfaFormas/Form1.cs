@@ -46,6 +46,14 @@ namespace WfaFormas
                     cmbTriangulo.Visible = false;
                     break;
 
+                case "Circunferência":
+                    ExibirRaio(true);
+                    ExibirBase(false);
+                    ExibirAltura(false);
+
+                    cmbTriangulo.Visible = false;
+                    break;
+
                 default:
                     break;
             }
@@ -135,6 +143,14 @@ namespace WfaFormas
                         B = Convert.ToDouble(txtBase.Text)
                     };
                     cmbObjetos.Items.Add(retangulo);
+                }
+                else if (cmbForma.Text.Equals("Circunferência"))
+                {
+                    FormaGeometrica circunferencia = new Circunferencia()
+                    {
+                        Raio = Convert.ToDouble(txtRaio.Text)
+                    };
+                    cmbObjetos.Items.Add(circunferencia);
                 }
             }
             catch (Exception ex)

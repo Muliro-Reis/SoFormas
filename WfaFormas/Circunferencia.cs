@@ -25,5 +25,10 @@ namespace WfaFormas
         {
             return 2 * Math.PI * raio;
         }
+
+        public override string ToString()
+        {
+            return $"Circunferência ({raio})";
+        }
     }
 }

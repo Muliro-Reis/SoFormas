@@ -11,7 +11,7 @@ namespace WfaFormas
 
         public override double CalcularPerimetro()
         {
-            return A + B + Math.Sqrt(A * A + B / 2 * B / 2);
+            return B + 2 * Math.Sqrt((B/2) * (B/2) + A * A);
         }
 
         public override string ToString()
